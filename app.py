@@ -6,7 +6,7 @@ from streamlit_folium import st_folium
 
 st.set_page_config(layout="wide", page_title="Local StatsHunters ČR")
 
-st.title("🗺️ Môj Lokálny Tile Hunting (ČR)")
+st.title("MyMap")
 
 # --- 1. MATEMATICKÉ FUNKCIE PRE DLAŽDICE ---
 def tile_edges(x, y, zoom=14):
