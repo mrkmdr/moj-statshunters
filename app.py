@@ -67,7 +67,7 @@ df['Celkovo_Kraj'] = celkovo_limity
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.header("📊 Štatistiky")
+    st.header("Stats")
     
     # Výpočet percent pre každý kraj
     stats = df.groupby(['Kraj', 'Celkovo_Kraj']).size().reset_index(name='Navštívené')
@@ -77,7 +77,7 @@ with col1:
         st.metric(label=f"{r['Kraj']}", value=f"{r['Pokrytie']}%", delta=f"{r['Navštívené']} / {r['Celkovo_Kraj']} tiles")
 
 with col2:
-    st.header("🗺️ Mapa")
+    st.header("Map")
     if not df.empty:
         stred_lat, stred_lon, _, _ = tile_edges(df.iloc[0]['xtile'], df.iloc[0]['ytile'])
         m = folium.Map(location=[stred_lat, stred_lon], zoom_start=11, tiles="OpenStreetMap")
